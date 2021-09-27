@@ -1,0 +1,197 @@
+<app-customer-navbar></app-customer-navbar>
+<div class="bradcam_area breadcam_bg_2">
+  <h3>Edit Booking</h3>
+
+  <div class="container">
+    <form novalidate [formGroup]="bookongEditForm"  style="margin-left: 350px;width: 420px;" (ngSubmit)="updateBooking()">
+      <fieldset>
+        <div class="form-group">
+          <label>
+            <h4><b style="color:white">Customer User Name</b></h4>
+          </label>
+          <input type="text" class="form-control" [readonly]="readonly" formControlName="customerUserName"
+            placeholder="Enter Customer Name">
+          <div class="alert alert-danger" *ngIf="bookongEditForm?.get('customerUserName')?.hasError('required') &&
+                           bookongEditForm.get('customerUserName')?.dirty">
+            Customer name is Required
+          </div>
+        </div>
+        <div class="form-group">
+
+          <label>
+            <h4><b style="color:white">Room Id</b></h4>
+          </label>
+          <input type="text" class="form-control"  formControlName="bookingId"
+            placeholder="Enter Room Id">
+          <div class="alert alert-danger" *ngIf="bookongEditForm?.get('bookingId')?.hasError('required') &&
+                           bookongEditForm.get('bookingId')?.dirty">
+            Customer name is Required
+          </div>
+        </div>
+        <div class="form-group display" id = "display1">
+
+          <label for="roomType" class="mr-sm-2">
+            <h4><b style="color:white">Id Proof : </b></h4>
+          </label>
+
+          <div id="hotelroom">
+            <select class="form-control" formControlName="idProof" id="Roombooking" style=" width: fit-content; height: 35px">
+              <option value="">--select--</option>
+              <option>Aadhar Card</option>
+              <option>Pan Card</option>
+              <option>Voter Id</option>
+              <option>Passport</option>
+            </select><br>
+          </div>
+
+          <input type="text" class="form-control" [readonly]="readonly" formControlName="idProof"
+            placeholder="Enter your Id Number">
+          <div class="alert alert-danger" *ngIf="bookongEditForm?.get('idProof')?.hasError('required') &&
+                           bookongEditForm.get('idProof')?.dirty">
+            Id Proof is Required
+
+          </div>
+        </div>
+
+        <div class="form-group display" id = "display10">
+          <label>
+            <h4><b style="color:white">Email :</b></h4>
+          </label>
+          <input type="email" class="form-control" [readonly]="readonly" formControlName="email"
+            placeholder="Enter your Email">
+          <div class="alert alert-danger"
+            *ngIf="bookongEditForm.get('email')?.hasError('required') && bookongEditForm.get('email')?.dirty">
+            Email is Required
+          </div>
+          </div>
+
+        <div class="form-group display" id = "display9">
+          <label for="roomType" class="mr-sm-2">
+            <h4><b style="color:white">Room Type : </b></h4>
+          </label>
+
+          <div id="hotelroom">
+            <select class="form-control" formControlName="roomType" id="roomType" style=" width: fit-content; height: fit-content;">
+              <option value="">--select--</option>
+              <option value="AC">AC</option>
+              <option value="Deluxe">Deluxe</option>
+              <option value="Luxury">Luxury</option>
+              <option value="Presedential suite">Presedential suite</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-group display" id = "display8">
+          <label>
+            <h4><b style="color:white">Number Of Room:</b></h4>
+          </label>
+          <input type="number" class="form-control" [readonly]="readonly" formControlName="numberOfRoom"
+            placeholder="Enter number of Room you Need">
+          <div class="alert alert-danger"
+            *ngIf="bookongEditForm.get('numberOfRoom')?.hasError('required') && bookongEditForm.get('numberOfRoom')?.dirty">
+            This section is required
+          </div>
+          </div>
+
+        <div class="form-group display" id = "display7">
+          <label>
+            <h4><b style="color:white">Room Size :</b></h4>
+          </label>
+          <!-- <p style="color:white">Select Room Size you want</p> -->
+          <div id="hotelroom">
+            <select class="form-control" formControlName="roomSize" id="roomSize" style=" width: fit-content; height: fit-content;">
+              <option value="">--select--</option>
+              <option value="Single Bed">Single Bed</option>
+              <option value="Double Bed">Double Bed</option>
+              <option value="Triple Bed">Triple Bed</option>
+            </select>
+          </div>
+          <div class="alert alert-danger"
+            *ngIf="bookongEditForm.get('roomSize')?.hasError('required') && bookongEditForm.get('roomSize')?.dirty">
+            roomSize is Required
+          </div>
+        </div>
+
+
+        <div class="form-group display" id = "display6">
+
+          <label for="breakfast" class="mr-sm-2">
+            <h4><b style="color:white">Breakfast : </b> </h4>
+          </label>
+
+          <input type="radio" name="breakfast" [readonly]="readonly" id="yes" value="yes" formControlName="breakfast"
+            required /><span style="color:white">Yes</span> &nbsp;
+          <input type="radio" name="breakfast" id="No" value="No" formControlName="breakfast" required />
+          <span style="color:white">No</span>
+
+        </div>
+
+        <div class="form-group display" id = "display5">
+
+          <label for="drinks" class="mr-sm-2">
+            <h4><b style="color:white">Drinks : </b></h4>
+          </label>
+
+          <input type="radio" name="drinks" id="yes" value="yes" [readonly]="readonly" formControlName="drinks"
+            required />
+          <span style="color:white">Yes</span> &nbsp;
+          <input type="radio" name="drinks" id="No" value="No" [readonly]="readonly" formControlName="drinks"
+            required />
+          <span style="color:white">No</span>
+
+        </div>
+
+        <div class="form-group display" id = "display4">
+          <label>
+            <h4><b style="color:white">CheckInDate Date & Time :</b></h4>
+          </label>
+          <input type="datetime-local" class="form-control" [readonly]="readonly"
+            formControlName="checkInDate" required>
+        </div>
+
+        <div class="form-group display" id = "display3">
+          <label>
+            <h4><b style="color:white">CheckOutDate Date & Time :</b></h4>
+          </label>
+          <input type="datetime-local" class="form-control" [readonly]="readonly"
+            formControlName="checkOutDate" required>
+
+
+          <div class="form-group display" id = "display2">
+
+            <label for="pickupandDrop" class="mr-sm-2">
+              <h4><b style="color:white">PickUp And Drop : </b></h4>
+            </label>
+
+            <input type="radio" name="pickUpAndDrop" id="yes" [readonly]="readonly" value="yes"
+              formControlName="pickUpAndDrop" required /><span style="color:white">Yes</span> &nbsp;
+            <input type="radio" name="pickUpAndDrop" id="No" [readonly]="readonly" value="No"
+              formControlName="pickUpAndDrop" required />
+            <span style="color:white">No</span>
+
+          </div>
+
+        </div>
+
+
+
+      </fieldset>
+      <button type="submit" class="btn btn-success btn-lg" *ngIf="details" (click)="readOnly()">Save</button><br>
+    </form>
+<br>
+    <div>
+      <button class="btn btn-info btn-lg" (click)="show()">Edit</button> &nbsp; &nbsp;
+      <button class="btn btn-danger btn-lg" (click)="cancleBooking()">Cancel</button> &nbsp; &nbsp;
+      <button class="btn btn-dark btn-lg" (click)="Back()">Back</button>
+
+    </div>
+
+    <font color=red size=5px>{{ errMessage }}</font>
+    <font color=green size=5px>{{ SuccessMsg }}</font>
+  </div>
+
+
+</div>
+
+<app-customer-footer></app-customer-footer>

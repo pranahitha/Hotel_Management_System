@@ -1,0 +1,133 @@
+<!-- <app-navbar></app-navbar>
+
+<div class="bradcam_area breadcam_bg">
+    <h3 align="center">Receptionist</h3>
+
+    <div class="loginForm">
+      <div class="main">
+          <br>
+          <h1 style="color:black"><b></b></h1>
+
+<title>Receptionist Login</title>
+
+<h2 align="center">Enter Login details</h2>
+<br><br>
+<span ><h6  align="center"><b>{{this.errorMessage}}</b></h6></span>
+<div class="container">
+    <form novalidate style="margin-left: 350px; width: 420px;" [formGroup]="receptionistlogin" (ngSubmit)="receptionistLogin()">
+
+        <fieldset>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+
+                <i class="fa fa-user fa-lg"></i> &nbsp;
+                <label style="font-weight: bold; font-size: 20px; color: black;">UserId </label>
+                <input type="number" name="receptionistId" id="receptionistId" placeholder="Enter ReceptionistId" formControlName="receptionistId" style="color:black;"
+                    class="form-control border border-primary" />
+
+                    <div *ngIf="receptionistlogin.get('receptionistId')?.hasError('required') && receptionistlogin.get('receptionistId')?.dirty">
+
+                    <b> <font color = "red">ReceptionistId is Required</font></b>
+                  </div>
+              </div>
+          </div>
+        <div class="form-row">
+
+            <div class="form-group col-md-4">
+                <i class="fa fa-key fa-lg"></i> &nbsp;
+                <label style="font-weight: bold; font-size: 20px; color: black;">Password </label>
+                <input type="password" name="receptionistPassword" id="receptionistPassword" formControlName="receptionistPassword"
+                    style="color:black;"  placeholder="Enter Password" class="form-control border border-primary" />
+                <div *ngIf="receptionistlogin.get('receptionistPassword')?.hasError('required') && receptionistlogin.get('receptionistPassword')?.dirty">
+                    <b> <font color = "red">Password is Required</font></b>
+                </div>
+
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="btn-text-center">
+
+              <button type="submit" class="btn btn-success" [disabled] ="receptionistlogin.invalid">Login</button>
+
+              <button type="reset" class="btn btn-primary">Reset</button>
+
+              <button type="submit" class="btn btn-dark" (click)="forgetPassword()" >ForgetPassword</button>&nbsp;&nbsp;
+
+        </div>
+
+          </fieldset>
+
+
+    </form>
+</div>
+</div>
+
+</div>
+<app-footer></app-footer>
+ -->
+ 
+ <app-navbar></app-navbar>
+<div class="bradcam_area breadcam_bg_1">
+    <h3 style="color: rgb(240, 236, 11);"><b>Receptionist Login</b></h3>
+
+
+    <div class="loginForm">
+        <div class="main">
+            <br>
+            <h1 style="color:black"><b></b></h1>
+	  <span ><h6  align="center"><b>{{this.errorMessage}}</b></h6></span>
+
+            <div class="container">
+                <form [formGroup]="receptionistlogin" (ngSubmit)="receptionistLogin()">
+                    <fieldset>
+                        <div class="form-row">
+                            <div class="form-group col-md-4"></div>
+                            <div class="form-group col-md-4">
+                                <i class="fa fa-user fa-lg"></i> &nbsp;
+                                <label style="font-weight: bold; font-size: 20px; color: black;">Username </label>
+                                <input type="text" name="receptionistId" id="receptionistId" placeholder="Enter ReceptionistId" formControlName="receptionistId" style="color:black;"
+                                    class="form-control border border-primary" />
+                                <div *ngIf="receptionistlogin.get('receptionistId')?.hasError('required') && receptionistlogin.get('receptionistId')?.dirty">
+                                    <b> <font color = "red">ReceptionistId is Required</font></b>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4"></div>
+                            <div class="form-group col-md-4">
+                                <i class="fa fa-key fa-lg"></i> &nbsp;
+                                <label style="font-weight: bold; font-size: 20px; color: black;">Password </label>
+                                <input type="password" name="receptionistPassword" id="receptionistPassword" formControlName="receptionistPassword"
+
+                                    style="color:black;"  placeholder="Enter Password" class="form-control border border-primary" />
+                                <div *ngIf="receptionistlogin.get('receptionistPassword')?.hasError('required') && receptionistlogin.get('receptionistPassword')?.dirty">
+                                    <b> <font color = "red">Password is Required</font></b>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <div class="btn-text-center">
+                            <button type="submit" class="btn btn-primary"
+                                (click)="receptionistLogin()" [disabled] ="receptionistlogin.invalid" >Log-in</button> &nbsp;
+                                <button type="reset" class="btn btn-primary">Reset</button>&nbsp;&nbsp;
+                            <button class="btn btn-danger " (click)="forgetPassword()">Forget Password</button>&nbsp;
+                            <br><br>
+
+                        </div>
+                    </fieldset>
+                    <br>
+                </form>
+                <!-- <button class="btn btn-dark btn-lg" (click)="back()">Back</button>&nbsp; -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+
+

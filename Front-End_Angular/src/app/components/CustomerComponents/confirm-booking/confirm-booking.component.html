@@ -1,0 +1,41 @@
+<app-customer-navbar></app-customer-navbar>
+
+<div class="bradcam_area breadcam_bg_1">
+  <h3 style="color: rgb(240, 236, 11);"><b>Confirm Booking</b></h3>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2>
+  <div style="font-family: sans-serif; color: rgb(255, 255, 255);">
+    <p style = "color:red; font-weight: 400;">{{errorMessage}}</p>
+    To confirm your booking You have to pay 10% Amount of your Room Booking Amount<br><br>
+
+    Amount : <input style = "color:black" type = "number" [value] = "price" readonly><br><br>
+    <button class="btn btn-danger" type="submit" (click)="cancel()">Cancel Booking</button>&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-success" type="submit"  (click)="paymentDone()">Pay For Confirm Booking</button>&nbsp;&nbsp;&nbsp;
+    <div *ngIf = "display">
+      <form novalidate [formGroup]="confirmForm" style="margin-left: 550px;width: 420px;" (ngSubmit)="final()">
+
+      <div class="form-group">
+
+        <label for="termsAndConditions"> &nbsp;&nbsp;&nbsp;&nbsp;<br> <span style="color: white;">This action will deduct money from your wallet</span> <br><br><input type="checkbox" formControlName="termsAndConditions" ngModel required> &nbsp;<span style="color: white;">Please select the check box</span></label><br>
+            <div class="alert alert-danger"
+            *ngIf="confirmForm.get('termsAndConditions').hasError('required') && confirmForm.get('termsAndConditions').dirty">
+              Please read and select the checkbox above
+            </div>
+      </div>
+    <button class="btn btn-primary btn-lg" type="submit" [disabled] ="confirmForm.invalid">Submit</button><br><br>
+    </form>
+
+
+    <button class="btn btn-success btn-lg" *ngIf = "display1"  (click)="home()">Back To the DashBoard</button>
+
+</div>
+<font color = "white">{{message}}</font>
+
+</div>
+<br>
+<br>
+
+<app-customer-footer></app-customer-footer>

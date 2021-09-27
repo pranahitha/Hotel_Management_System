@@ -1,0 +1,159 @@
+<app-customer-navbar></app-customer-navbar>
+
+
+<div class="bradcam_area breadcam_bg_1">
+
+    <h3 > <b> SignUp Form</b></h3>
+    <br> <br/>
+    <div class="container">
+        <form novalidate [formGroup]="customerSignUpForm" style="margin-left: 350px;width: 420px;" (ngSubmit)="saveCustomer()">
+          <fieldset>
+            <div class="form-group">
+              <label ><h4 > <b style="color: white"> Customer User Name</b></h4></label>
+              <input type="text" class="form-control" formControlName="customerUserName" required>
+              <div
+                *ngIf="customerSignUpForm.get('customerUserName').hasError('required') && customerSignUpForm.get('customerUserName').dirty">
+                <b> <font color = "red">Customer Username is Required</font></b>
+              </div>
+              <br/>
+            <div class="form-group">
+              <label ><h4 > <b style="color: white"> Customer Name</b></h4></label>
+              <input type="text" class="form-control" formControlName="customerName" required>
+              <div
+                *ngIf="customerSignUpForm.get('customerName').hasError('required') && customerSignUpForm.get('customerName').dirty">
+                 <b><font color = "red">Customer Name is Required</font></b>
+              </div>
+            </div>
+          <div class="form-group">
+            <label>
+              <h4> <b style="color: white"> Password </b></h4>
+            </label>
+            <input type="password" class="form-control" id="password" formControlName="password" [(ngModel)]="password"
+              required>
+               <div class=""
+            *ngIf="customerSignUpForm.get('password').hasError('required') && customerSignUpForm.get('password').dirty">
+            <font color="red">Password is Required</font>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <h4> <b style="color: white"> Confirm-Password</b></h4>
+            </label>
+            <input type="password" class="form-control" id="confirm_password" formControlName="confirm_password"
+              [(ngModel)]="confirm_password" required>
+
+          <div class=""
+            *ngIf="customerSignUpForm.get('confirm_password').hasError('required') && customerSignUpForm.get('confirm_password').dirty">
+            <font color="red">Password is Required</font>
+          </div>
+           </div>
+
+          <div *ngIf="passwordMatch(password ,confirm_password)">
+              <b><font color = "red">password doesn't match</font></b>
+            </div>
+
+
+
+            <div class="form-group">
+              <label> <h4 > <b style="color: white"> Email </b> </h4> </label>
+              <input type="email" class="form-control" formControlName="email" required>
+              <div *ngIf="customerSignUpForm.get('email').hasError('required') &&
+                         customerSignUpForm.get('email').dirty">
+                         <b><font color = "red">Email is Required</font></b>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label> <h4 > <b style="color: white">Mobile Number</b></h4> </label>
+              <input type="number" class="form-control" formControlName="mobileNumber" required>
+              <div
+                *ngIf="customerSignUpForm.get('mobileNumber').hasError('required') && customerSignUpForm.get('mobileNumber').dirty">
+                <b><font color = "red">Phone is Required</font></b>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label> <h4 > <b style="color: white"> Age </b> </h4> </label>
+              <input type="number" class="form-control" formControlName="age" required>
+              <div 
+                *ngIf="customerSignUpForm.get('age').hasError('required') && customerSignUpForm.get('age').dirty">
+                <b><font color = "red">Age is Required</font></b>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="gender" class="mr-sm-2"> <h4 > <b style="color: white"> Gender : </b></h4></label> &nbsp;
+              <input type="radio" name="gender" id="male" value="male" formControlName="gender" />   <b style="color: white"> Male </b> &nbsp;
+              <input type="radio" name="gender" id="female" value="female" formControlName="gender" /> <b style="color: white"> Female </b> &nbsp;
+              <input type="radio" name="gender" id="trans" value="trans" formControlName="gender" /> <b style="color: white"> Others </b>
+              <div *ngIf="customerSignUpForm.get('gender').hasError('required') && customerSignUpForm.get('gender').dirty"
+                class=" alert alert-danger">
+                <b><font color = "red">Gender is required.</font></b>
+              </div>
+            </div>
+            <div>
+              <div class="col-md-13">
+              <label for="address"> <h4 > <b style="color: white"> Address </b> </h4> </label><br>
+              <table>
+                <tr>
+                  <td>
+              <select name="country" id="country" required formControlName = "country" style="color: black;">
+                <option value="">--Select Country--</option>
+                <option value="India">India</option>
+              </select>
+            </td>&nbsp;
+              <td>
+              <select name = "state" id="states" required formControlName = "state" style="color: black;">
+                <option value ="">--Select State--</option>
+                <option value ="Telangana">Telangana</option>
+                <option value ="Maharashtra">Maharashtra</option>
+                <option value ="Haryana">Haryana</option>
+                <option value ="Punjab">Punjab</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value ="delhi">Delhi</option>
+                <option value ="TamilNadu">Tamil Nadu</option>
+              </select>
+              </td>&nbsp;
+              <td>
+              <select name = "city" id="city" required formControlName = "city" style="color: black;">
+                <option value ="">--Select City--</option>
+                <option value ="Hyd">Hyderabad</option>
+                <option value ="Mumbai">Mumbai</option>
+                <option value ="Ambala">Ambala</option>
+                <option value="Amritsar">Amritsar</option>
+                <option value="Noida">Noida</option>
+                <option value="new delhi">new-delhi</option>
+                <option value="Chennai">Chennai</option>
+              </select>
+            </td>
+          </tr>
+              </table>
+          </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <h4> <b style="color: white"> ID Proof</b> </h4>
+            </label>
+            <input type="text" class="form-control" formControlName="idProof" required>
+            <div *ngIf="customerSignUpForm.get('idProof').hasError('required') &&
+                   customerSignUpForm.get('idProof').dirty">
+                   <b><font color = "red">ID proof is Required</font></b>
+              </div>
+            </div>
+
+          <br>
+          <button type="submit"  class="btn btn-primary btn-lg"  [disabled]="!customerSignUpForm.valid">Submit</button>&nbsp;
+          <!-- <input type="submit" class="btn btn-primary btn-lg" ng-disabled="customerSignUpForm.email.$dirty && customerSignUpForm.email.$valid">&nbsp; -->
+          <button class="btn btn-primary btn-lg" id="login" (click)="login()">Login</button>&nbsp;
+          <button class="btn btn-dark btn-lg" (click)="Back()">Back</button>
+          <br><br>
+          <font color=red size=5px>{{ errorMessage }}</font>
+          <font color=green size=5px>{{ successMessage }}</font>
+
+      </fieldset>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,196 @@
+<app-customer-navbar></app-customer-navbar>
+
+<div class="bradcam_area breadcam_bg_1">
+  <h3 ><b style="color: rgb(240, 236, 11);">Customer Booking Form</b></h3>
+
+  <!-- <div class="card">
+      <div class="card-body" align="center"> -->
+
+  <div class="main" align="center">
+
+    <div class="container">
+      <form novalidate [formGroup]="bookingForm" style="margin-left: 100px; width: 450px;" (ngSubmit)="sendbookingForm()">
+        <fieldset>
+          <div class="form-group">
+            <label><h4><b style="color:white">Customer User Name : </b></h4></label>
+              <input type="text" class="form-control" formControlName="customerUserName" readonly placeholder="Enter User Name">
+                <div  *ngIf="bookingForm.get('customerUserName').hasError('required') && bookingForm.get('customerUserName').dirty">
+                  <b  style="color: black"><font color = "red">Customer User Name is Required</font></b>
+                </div>
+
+
+          <div class="form-group">
+
+              <label><h4><b style="color:white">Customer Name : </b></h4></label>
+               <input type="text" class="form-control" formControlName="customerName" readonly placeholder="Enter Name">
+                 <div *ngIf="bookingForm?.get('customerName')?.hasError('required') && bookingForm.get('customerName')?.dirty">
+                  <b><font color = "red">Customer Name is Required</font></b>
+                 </div>
+
+          </div>
+
+
+            <div class="form-group">
+              <table>
+                <tr><td>
+              <label for="roomType" ><h4><b style="color:white">Id Proof : </b></h4></label></td>
+              <td>
+               <div id="hotelroom">
+                  <select class="form-control" formControlName="idProof" id="idProof" style="width: fit-content;height: fit-content;">
+                    <option value="">--select--</option>
+                    <option>Aadhar Card</option>
+                    <option>Pan Card</option>
+                    <option>Voter Id</option>
+                    <option>Passport</option>
+                  </select>
+                </div>
+              </td>
+              </tr>
+              </table>
+
+              <input type="text" class="form-control" formControlName="idProof" placeholder="Enter your Id Number">
+              <div *ngIf="bookingForm?.get('idProof')?.hasError('required') && bookingForm.get('idProof')?.dirty">
+                <b><font color = "red">Id is Required</font></b>
+              </div>
+            </div>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">Email :</b></h4></label>
+             <input type="email" class="form-control" formControlName="email" placeholder="Enter your Email">
+              <div  *ngIf="bookingForm.get('email')?.hasError('required') && bookingForm.get('email')?.dirty">
+                <b><font color = "red">Email is Required</font></b>
+              </div>
+          </div>
+
+
+          <div class="form-group">
+            <label><h4><b style="color:white">Phone Number :</b></h4></label>
+            <input type="email" class="form-control" formControlName="customerMobileno" placeholder="Enter your Phone Number">
+            <div *ngIf="bookingForm.get('customerMobileno')?.hasError('required') && bookingForm.get('customerMobileno')?.dirty">
+              <b><font color = "red">Phone Number is Required</font></b>
+            </div>
+          </div>
+
+          <div class="form-group">
+
+            <label for="roomType" class="mr-sm-2"><h4><b style="color:white">Room Type : </b></h4></label>&nbsp;
+
+            <input type="radio" name="roomType" id="Semi_Delux" value="Normal" formControlName="roomType"  (change) = "getOffers(bookingForm.get('roomType').value)" required/>
+              <span style="color:white" > &nbsp;Normal</span> &nbsp;&nbsp;
+
+              <input type="radio" name="roomType" id="Delux" value="AC" formControlName="roomType" (change) = "getOffers(bookingForm.get('roomType').value)" required />
+              <span style="color:white" >&nbsp;AC</span>&nbsp;&nbsp;
+
+              <!-- <input type="radio" name="roomType" id="Luxury" value="Luxury" formControlName="roomType" (change) = "getOffers(bookingForm.get('roomType').value)" required />
+              <span style="color:white" > &nbsp;Luxury</span> -->
+              <input type="radio" name="roomType" id="Deluxe" value="Deluxe" formControlName="roomType" (change) = "getOffers(bookingForm.get('roomType').value)" required />
+              <span style="color:white" > &nbsp;Deluxe</span>
+
+
+
+          </div>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">Number Of Room :</b></h4></label>
+              <input type="number" class="form-control" formControlName="numberOfRooms" placeholder="Enter number of Room you Need">
+                <div *ngIf="bookingForm.get('numberOfRooms')?.hasError('required') && bookingForm.get('numberOfRooms')?.dirty">
+                  <b><font color = "red">Number Of Room is Required</font></b>
+                </div>
+          </div>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">Number of Members :</b></h4></label>
+            <input type="number" class="form-control" formControlName="numberOfMembers" placeholder="Enter number Of Members">
+            <div *ngIf="bookingForm.get('numberOfMembers')?.hasError('required') && bookingForm.get('numberOfMembers')?.dirty">
+              <b><font color = "red">Number of Members : is Required</font></b>
+            </div>
+          </div>
+
+          <div class="form-group">
+
+            <label for="roomSize" class="mr-sm-2"><h4><b style="color:white">Room Size : </b></h4></label>&nbsp;&nbsp;
+
+            <input type="radio" name="roomSize" id="Single_Bed" value="Single" formControlName="roomSize" (change) = "getOffersForRoomSize(bookingForm.get('roomSize').value)" required />
+              <span style="color:white" >&nbsp;Single Bed</span> &nbsp;&nbsp;
+
+              <input type="radio" name="roomSize" id="Double_Bed" value="Double" formControlName="roomSize" (change) = "getOffersForRoomSize(bookingForm.get('roomSize').value)" required />
+              <span style="color:white" >&nbsp;Double Bed</span>&nbsp;&nbsp;
+
+              <input type="radio" name="roomSize" id="Triple_Bed" value="Triple" formControlName="roomSize"  (change) = "getOffersForRoomSize(bookingForm.get('roomSize').value)" required  />
+              <span style="color:white" >&nbsp;Triple Bed</span>&nbsp;&nbsp;
+
+          </div>
+
+          <div *ngIf = "showOffer">
+            <table style = "padding:25px;background-image: url(/assets/img/offers/th.jfif);" >
+
+              <tr *ngFor = "let offer of offers">
+                <table align="center"border='1'>
+                  <tr></tr>
+                  <tr>
+                  <td style="background-color: aliceblue;padding:5px;text-align: center;font-weight: bolder;font-style: italic;color:gold;font-size: 16px;">{{offer.offerName}}</td></tr>
+
+                </table><br>
+              <table align="center" style=" color:black;font-family: Georgia, 'Times New Roman', Times, serif;font-weight:bold;" >
+                <tr> <td style="padding:10px;align-items: center;">{{offer.discountPercentage}}%</td></tr>
+                <!-- <td style="padding:10px;">{{offer.termsAndConditions}}</td> -->
+                <!-- <td style="padding:10px;">{{offer.offerId}}</td> -->
+                <tr>
+                <td style="padding:5px;font-weight: bold;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-style: italic;">{{offer.offerDetails}}</td>
+              </tr>
+              <tr></tr>
+            </table>
+            </tr>
+            </table>
+          </div>
+
+          <div class="form-group">
+            <label for="breakfast" class="mr-sm-2"><h4><b style="color:white">Breakfast : </b> </h4></label>&nbsp;&nbsp;
+            <input type="radio" name="breakfast" id="yes" value="yes" formControlName="breakfast" required
+            /><span style="color:white" >&nbsp;Yes</span> &nbsp;&nbsp;
+            <input type="radio" name="breakfast" id="No" value="No" formControlName="breakfast" required />
+            <span style="color:white" >&nbsp;No</span>&nbsp;&nbsp;
+          </div>
+
+          <div class="form-group">
+            <label for="drinks" class="mr-sm-2"><h4><b style="color:white">Drinks : </b></h4></label>&nbsp;&nbsp;
+            <input type="radio" name="drinks" id="yes" value="yes" formControlName="drinks" required />
+            <span style="color:white" >&nbsp;Yes</span> &nbsp;&nbsp;
+            <input type="radio" name="drinks" id="No" value="No" formControlName="drinks" required />
+            <span style="color:white" >&nbsp;No</span>&nbsp;&nbsp;
+          </div>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">Check In Date & Time :</b></h4></label>
+            <input type="datetime-local" class="form-control" formControlName="checkInDate" placeholder="Enter Check In Date & Time" required>
+          </div>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">check Out Date & Time :</b></h4></label>
+            <input type="datetime-local" class="form-control" formControlName="checkOutDate" placeholder="Enter Check Out Date & Time" required>
+
+
+            <div class="form-group">
+              <label for="pickupandDrop" class="mr-sm-2"><h4><b style="color:white">PickUp And Drop : </b></h4></label>
+
+              <input type="radio" name="pickUpAndDrop" id="yes" value="yes" formControlName="pickUpAndDrop" required />
+              <span style="color:white" >&nbsp;Yes</span> &nbsp;&nbsp;
+
+              <input type="radio" name="pickUpAndDrop" id="No" value="No" formControlName="pickUpAndDrop" required />
+              <span style="color:white" >&nbsp;No</span>&nbsp;&nbsp;
+            </div>
+
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg"   [disabled]="!bookingForm.valid" (click) = "next()">Next</button>&nbsp; &nbsp;
+          <button class="btn btn-dark btn-lg" (click)="Back()">Cancel Form</button>
+    </div>
+
+    </fieldset>
+
+
+    </form>
+  </div>
+</div>
+</div>
+
+<app-customer-footer></app-customer-footer>

@@ -1,0 +1,401 @@
+<app-customer-navbar></app-customer-navbar>
+<div class="main">
+<div class="slider_area">
+    <div class="slider_active owl-carousel">
+        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                            <h3>Montana Resort</h3>
+                            <p>Unlock to enjoy the view of Martine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                            <h3>Life is Beautiful</h3>
+                            <p>Unlock to enjoy the view of Martine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                            <h3>Montana Resort</h3>
+                            <p>Unlock to enjoy the view of Martine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                            <h3>Life is Beautiful</h3>
+                            <p>Unlock to enjoy the view of Martine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
+            <div class="card-body" align="center">
+                <h4 class="card-title" align="center"><b style="color: black">Book Room</b></h4>
+                <p align="center"><i class="fa fa-calendar-plus-o fa-5x" aria-hidden="true"></i></p>
+                <p class="card-text">If you have never booked a hotel room before, you can do so easily and quickly by clicking on this button
+                </p>
+                <button type="submit" class="btn btn-primary btn-lg mb-2" (click) = "book()">
+                    Book Room
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
+            <div class="card-body" align="center">
+                <h4 class="card-title" align="center" ><b style="color: black">Cancel Booking</b></h4>
+                <p align="center"><i class="fa fa-plus-square fa-5x" aria-hidden="true"></i></p>
+                <p class="card-text">You can also cancel booking  through cancel button.Cancellation can be done only with valid booking Id</p>
+                <button type="button" class="btn btn-danger btn-lg" (click) = "cancleBooking()">
+                    Cancel Booking
+                    <!-- <a (click)="admitForm()">Admit</a> -->
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
+            <div class="card-body" align="center">
+                <h4 class="card-title" align="center"><b  style="color: black">Update Booking</b></h4>
+                <p align="center"><i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></p>
+                <p class="card-text">You can update your booking details anytime through update button. Updation  can be done only with valid booking Id</p>
+                <button type="submit" class="btn btn-warning btn-lg" (click) = "updateBooking()">
+                    Update Booking
+                    <!-- <a (click)="editForm()">Profile</a> -->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card text-white " style="background-image: url(/assets/background.jpeg);">
+            <div class="card-body" align="center">
+                <h4 class="card-title" align="center"><b  style="color: black">Add Pickup And Drop</b></h4>
+                <p align="center"><i class="fa fa-calendar-plus-o fa-5x" aria-hidden="true"></i></p>
+                <p class="card-text">Pick up and drop facilities are available at anytime. Chooose your pickup location and enjoy our FREE service</p>
+                <button type="submit" class="btn btn-primary btn-lg mb-2" (click) = "addPickDrop()">
+                    Add
+                    <!-- <a (click)="appointmentForm()">Book Appointment</a> -->
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
+            <div class="card-body" align="center">
+                <h4 class="card-title" align="center"><b style="color: black"> Cancel Pickup And Drop</b></h4>
+                <p align="center"><i class="fa fa-plus-square fa-5x" aria-hidden="true"></i></p>
+                <p class="card-text">You can also cancel Pickup And Drop  through below button. Cancellation can be done only with valid Pickup And Drop Id</p>
+                <button type="button" class="btn btn-danger btn-lg" (click) = "canclePickDrop()">
+                    Cancel
+                    <!-- <a (click)="admitForm()">Admit</a> -->
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
+            <div class="card-body" align="center">
+                <h4 class="card-title" align="center"><b  style="color: black">Update Pickup And Drop</b></h4>
+                <p align="center"><i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></p>
+                <p class="card-text">You can also update Pickup And Drop  through below button. Updation can be done only with valid Pickup And Drop Id</p>
+                <button type="submit" class="btn btn-warning btn-lg" (click) = "updatePickDrop()">
+                    Update
+                    <!-- <a (click)="editForm()">Profile</a> -->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
+            <div class="card-body" align="center">
+                <h4 class="card-title" align="center"><b  style="color: black">View Booking History</b></h4>
+                <p align="center"><i class="fa fa-calendar-plus-o fa-5x" aria-hidden="true"></i></p>
+                <p class="card-text">You can view all booking history with your username. You can view using below button</p>
+                <button type="submit" class="btn btn-primary btn-lg mb-2" (click) = "viewHistory()">
+                    History
+                    <!-- <a (click)="appointmentForm()">Book Appointment</a> -->
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
+            <div class="card-body" align="center">
+                <h4 class="card-title" align="center"><b  style="color: black">View Bill</b></h4>
+                <p align="center"><i class="fa fa-plus-square fa-5x" aria-hidden="true"></i></p>
+                <p class="card-text">You can view your Hotel booking bill. You can download and pay your Bill</p>
+                <button type="button" class="btn btn-danger btn-lg" (click) = "billing()">
+                    View Bill
+                    <!-- <a (click)="admitForm()">Admit</a> -->
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
+            <div class="card-body" align="center">
+                <h4 class="card-title" align="center"><b  style="color: black">Give Feedback</b></h4>
+                <p align="center"><i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></p>
+                <p class="card-text">Please Help us to make better of ourselves.We are glad to know FeedBack from you!</p>
+                <a type="submit" class="btn btn-warning btn-lg" href = "form">
+                   Give Feedback
+                    <!-- <a (click)="editForm()">Profile</a> -->
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="offers_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-100">
+                    <span>Our Offers</span>
+                    <h3>Ongoing Offers</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-md-4">
+                <div class="single_offers">
+                    <div class="about_thumb">
+                        <img src="../../assets/img/offers/1.png" alt="">
+                    </div>
+                    <h3>Up to 35% savings on Club <br>
+                        rooms and Suites</h3>
+                    <ul>
+                        <li>Luxury Rooms</li>
+                        <!-- <li>3 Adults & 2 Children size</li> -->
+                        <li>Sea view side</li>
+                    </ul>
+                    <a (click) = "book()" class="book_now">Book Now</a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-4">
+                <div class="single_offers">
+                    <div class="about_thumb">
+                        <img src="../../assets/img/offers/2.png" alt="">
+                    </div>
+                    <h3>Up to 35% savings on Club <br>
+                        rooms and Suites</h3>
+                    <ul>
+                      <li>Balcony Rooms</li>
+                      <!-- <li>3 Adults & 2 Children size</li> -->
+                      <li>Sun set view </li>
+                    </ul>
+                    <a (click) = "book()" class="book_now">book now</a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-4">
+                <div class="single_offers">
+                    <div class="about_thumb">
+                        <img src="../../assets/img/offers/3.png" alt="">
+                    </div>
+                    <h3>Up to 35% savings on Club <br>
+                        rooms and Suites</h3>
+                    <ul>
+                      <li>Deluxe Rooms</li>
+                      <!-- <li>3 Adults & 2 Children size</li> -->
+                      <li>Hill View</li>
+                    </ul>
+                    <a (click) = "book()" class="book_now">book now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="video_area video_bg overlay">
+    <div class="video_area_inner text-center">
+        <span>Montana Sea View</span>
+        <h3>Relax and Enjoy your <br>
+            Vacation </h3>
+        <a href="https://www.youtube.com/watch?v=vLnPwxZdW4Y" class="video_btn popup-video">
+            <i class="fa fa-play"></i>
+        </a>
+    </div>
+</div>
+<!-- video_area_end -->
+
+<!-- about_area_start -->
+<div class="about_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7">
+                <div class="about_thumb2 d-flex">
+                    <div class="img_1">
+                        <img src="img/about/1.png" alt="">
+                    </div>
+                    <div class="img_2">
+                        <img src="img/about/2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-5">
+                <div class="about_info">
+                    <div class="section_title mb-20px">
+                        <span>Delicious Food</span>
+                        <h3>We Serve Fresh and <br>
+                            Delicious Food</h3>
+                    </div>
+                    <p>Get a taste of locally sourced, farm-to-fabulous cuisine rendered by our endlessly creative chefs. It’s all paired with curated wines and craft cocktails for an experience that’s to dine for.</p>
+                    <a href="#" class="line-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- about_area_end -->
+<!-- features_room_startt -->
+<div class="features_room">
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="section_title text-center mb-100">
+                  <span>Featured Rooms</span>
+                  <h3>Choose a Better Room</h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="rooms_here">
+      <div class="single_rooms">
+          <div class="room_thumb">
+              <img src="../../assets/img/rooms/1.png" alt="">
+              <div class="room_heading d-flex justify-content-between align-items-center">
+                  <div class="room_heading_inner">
+                    <!--   <span>From $250/night</span> -->
+                      <h3>Superior Room</h3>
+                  </div>
+                  <a href="#" class="line-button">book now</a>
+              </div>
+          </div>
+      </div>
+      <div class="single_rooms">
+          <div class="room_thumb">
+              <img src="../../assets/img/rooms/2.png" alt="">
+              <div class="room_heading d-flex justify-content-between align-items-center">
+                  <div class="room_heading_inner">
+                      <!-- <span>From $250/night</span> -->
+                      <h3>Deluxe Room</h3>
+                  </div>
+                  <a href="#" class="line-button">book now</a>
+              </div>
+          </div>
+      </div>
+      <div class="single_rooms">
+          <div class="room_thumb">
+              <img src="../../assets/img/rooms/3.png" alt="">
+              <div class="room_heading d-flex justify-content-between align-items-center">
+                  <div class="room_heading_inner">
+                      <!-- <span>From $250/night</span> -->
+                      <h3>Signature Room</h3>
+                  </div>
+                  <a href="#" class="line-button">book now</a>
+              </div>
+          </div>
+      </div>
+      <div class="single_rooms">
+          <div class="room_thumb">
+              <img src="/assets/room.jpg" alt="">
+              <div class="room_heading d-flex justify-content-between align-items-center">
+                  <div class="room_heading_inner">
+                      <!-- <span>From $250/night</span> -->
+                      <h3>Balcony Room</h3>
+                  </div>
+                  <a href="#" class="line-button">book now</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- features_room_end -->
+<br/>
+<!-- forQuery_start -->
+
+
+<!-- instragram_area_start -->
+<div class="instragram_area">
+    <div class="single_instagram">
+        <img src="../../assets/img/instragram/1.png" alt="">
+        <div class="ovrelay">
+            <a href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <div class="single_instagram">
+        <img src="../../assets/img/instragram/2.png" alt="">
+        <div class="ovrelay">
+            <a href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <div class="single_instagram">
+        <img src="../../assets/img/instragram/3.png" alt="">
+        <div class="ovrelay">
+            <a href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <div class="single_instagram">
+        <img src="../../assets/img/instragram/4.png" alt="">
+        <div class="ovrelay">
+            <a href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <div class="single_instagram">
+        <img src="../../assets/img/instragram/5.png" alt="">
+        <div class="ovrelay">
+            <a href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- instragram_area_end -->
+</div>
+<app-customer-footer></app-customer-footer>
