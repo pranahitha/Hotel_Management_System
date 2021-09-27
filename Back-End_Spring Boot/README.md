@@ -1,9 +1,7 @@
 # Hotel Management System
 ### Result (Home Page) :
-![](https://github.com/PavanSaiSheshetti/HotelManagementSystem_Angular/blob/master/src/assets/img/image.png)
-### Note :
-  This project is only spring project and please find related angular project [here](https://github.com/PavanSaiSheshetti/HMS_angular_admin). You will find complete 
-  description of running project in Installation and Run Section
+![](https://github.com/pranahitha/Hotel_Management_System/blob/master/Front-End_Angular/src/assets/img/Result.jpg)
+
 ## Project Description
 
 <p> Title of our application is Hotel Management System</p>
