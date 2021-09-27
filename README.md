@@ -68,20 +68,20 @@ Customers need to register in order to book a room in a hotel from 1 day to 10 d
 
 ## Getting Started
 
-After running this project , run the angular project (import angular project [here](https://github.com/PavanSaiSheshetti/HMS_angular_admin)). Home page will be displayed where you can see the about,facilities and login section for Admin, Receptionist, Customer.
+After running folder named as Backend as project , run the angular project of folder name Front-End . Home page will be displayed where you can see the about,facilities and login section for Admin, Receptionist, Customer.
 
 After login they can view their respective dashboard with all the functionalities.
 
 ## Usage
 
 ### Step1 :
-Import this project by a Github Desktop(click [here](https://desktop.github.com/) to install) or by downloading the Zip file . If you downloaded the zip file then you need to unzip or extract it and import this in eclipse(file-->import-->select the project)
+Import this folder back-end project by a Github Desktop(click [here](https://desktop.github.com/) to install) or by downloading the Zip file . If you downloaded the zip file then you need to unzip or extract it and import this in eclipse(file-->import-->select the project)
 change the database configuration in application.properties file (Driver,Dialect,username and password).
 
 ### Step2 :
-Import the angular Project (find [here](https://github.com/PavanSaiSheshetti/HMS_angular_admin))by a Github Desktop or by downloading the Zip file. If you downloaded the zip file then you need to unzip or extract it and open the project folder in visual studio code or any other code editor(file-->select folder-->select the project)
+Import the angular Project folder named as Front-end by a Github Desktop or by downloading the Zip file. If you downloaded the zip file then you need to unzip or extract it and open the project folder in visual studio code or any other code editor(file-->select folder-->select the project)
 
-That's all you can run this project and see the results.
+Now you can run this project and see the results.
 
 ### Note :
 <ol>
@@ -92,7 +92,4 @@ That's all you can run this project and see the results.
 ## Contributors :
 This Project is a batch project. Entire batch of 25 members worked on each modules and functionalities collaboratively.
 
-### Bug / Feature Request:
-
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/PavanSaiSheshetti/HotelManagementSystem/issues/new) by including your search query and the expected result.
 
