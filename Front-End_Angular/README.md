@@ -1,5 +1,8 @@
 # Hotelmanagement
 
+### Result (Home Page) :
+![](https://github.com/pranahitha/Hotel_Management_System/blob/master/Front-End_Angular/src/assets/img/Result.jpg)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
 ## Development server
